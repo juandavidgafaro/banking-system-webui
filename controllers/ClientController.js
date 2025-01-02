@@ -1,26 +1,31 @@
-class ClientController {
-    static registerClient(formValues) {
-        const { name, id, type, product, repName, repId, repPhone } = formValues;
+import BaseController from './BaseController.js';
+import Client from '../models/Client.js';
 
-        let legalRepresentative = null;
-        if (type === 'business') {
-            if (!repName || !repId || !repPhone) {
-                throw new Error('Please complete all fields for the legal representative.');
-            }
-            legalRepresentative = new LegalRepresentative(repName, repId, repPhone);
-        }
+export default class ClientController extends BaseController {
 
-        const client = new Client(name, id, type, product, legalRepresentative);
-        return client;
+    constructor() {
+        super(); 
+        this.urlBase = "https://localhost:44315/api/v1/Client";
     }
 
-    static generateMessage(client) {
-        let message = `Client registered:\nName: ${client.name}\nID: ${client.id}\nType: ${client.type}\nProduct: ${client.product}`;
+    async create(data) {
+        const client = this.#buildClient(data);
 
-        if (client.type === 'business' && client.legalRepresentative) {
-            message += `\nLegal Representative:\n  Name: ${client.legalRepresentative.name}\n  ID: ${client.legalRepresentative.id}\n  Phone: ${client.legalRepresentative.phone}`;
-        }
+        let clientCreatedId = await this.postRequest(this.urlBase, client);
+        
+        return clientCreatedId;
+    }
 
-        return message;
+    #buildClient(data) {
+        const client = new Client(
+            data.name, 
+            data.identificationNumber,
+            data.identificationType,
+            data.personType,
+            data.country,
+            data.legalRepresentative
+        );
+
+        return client;
     }
 }
