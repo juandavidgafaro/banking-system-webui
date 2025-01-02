@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../../../content/css/CalculateInterestProductStyles.css">
+    <title>Calcular interes</title>
+</head>
+<body>
+    <a id="back-btn" href="./../../../home/Products.html">Regresar</a>
+
+    <div class="form-container">
+        <h2>Calcular interes</h2>
+        <form id="product-form">
+            <div class="form-group">
+                <label for="initialBalance">Saldo inicial</label>
+                <input type="text" id="initialBalance" name="initialBalance" value="0" required>
+            </div>
+            <div class="form-group">
+                <label for="interestRate">Tasa de interés (%)</label>
+                <input type="text" id="interestRate" name="interestRate" value="0" required>
+            </div>
+            <div class="form-group">
+                <label for="months">Meses</label>
+                <input type="text" id="months" name="months" value="0" required>
+            </div>
+            <div class="form-group">
+                <label for="productType">Tipo de producto</label>
+                <select id="productType" name="productType" required>
+                    <option value="Cuenta ahorros" selected>Cuenta ahorros</option>
+                    <option value="Cuenta corriente">Cuenta corriente</option>
+                    <option value="CDT">CDT</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="result">Resultado (Saldo final)</label>
+                <input type="text" id="result" name="result" readonly>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit">Calcular</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="../../../../controllers/BaseController.js"></script>
+<script type="module" src="../../../../controllers/ProductController.js"></script>
+<script type="module" src="./CalculateInterestProductForm.js"></script>
+</html>

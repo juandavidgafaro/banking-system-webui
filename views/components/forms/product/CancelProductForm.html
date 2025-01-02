@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../../../content/css/CancelProductFormStyless.css">
+    <title>Cancelar Producto</title>
+</head>
+<body>
+    <a id="back-btn" href="./../../../home/Products.html">Regresar</a>
+    
+    <form id="cancelForm">
+        <h2>Cancelar Producto</h2>
+        <label for="productId">ID del Producto<span style="color: red;">*</span>:</label>
+        <input type="text" id="productId" name="productId" value="0" required>
+        <br><br>
+        <button type="submit">Cancelar Producto</button>
+    </form>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="../../../../controllers/BaseController.js"></script>
+<script type="module" src="../../../../controllers/ProductController.js"></script>
+<script type="module" src="./CancelProductForm.js"></script>
+</html>

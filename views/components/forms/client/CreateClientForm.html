@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../content/css/CreateClientFormView.css">
+    <title>Registrar cliente</title>
+</head>
+
+<body>
+    <a id="back-btn" href="./../../../home/Products.html">Regresar</a>
+
+    <form id="registrationForm" method="POST" action="#" required>
+        <h2>Crear cliente</h2>
+        <label for="name">Nombre <span style="color: red;">*</span>:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="identificationNumber">Número de Identificación <span style="color: red;">*</span>:</label>
+        <input type="text" id="identificationNumber" name="identificationNumber" required><br><br>
+
+        <label for="identificationType">Tipo de Identificación <span style="color: red;">*</span>:</label>
+        <select id="identificationType" name="identificationType" onchange="" required>
+            <option value="Natural" selected>Cédula de ciudadanía</option>
+            <option value="Empresarial">Cédula de extranjería</option>
+        </select><br><br>
+
+        <label for="personType">Tipo de Persona <span style="color: red;">*</span>:</label>
+        <select id="personType" name="personType" onchange="toggleLegalRepresentative()" required>
+            <option value="Natural" selected>Natural</option>
+            <option value="Empresarial">Empresarial</option>
+        </select><br><br>
+
+        <label for="country">País <span style="color: red;">*</span>:</label>
+        <input type="text" id="country" name="country" required><br><br>
+
+        <div id="legalRepresentativeFields" style="display: none;">
+            <h3>Representante Legal</h3>
+            <label for="legalRepresentativeName">Nombre del Representante Legal <span style="color: red;">*</span>:</label>
+            <input type="text" id="legalRepresentativeName" name="legalRepresentativeName"><br><br>
+
+            <label for="legalRepresentativeIdentificationNumber">Número de Identificación del Representante Legal <span style="color: red;">*</span>:</label>
+            <input type="text" id="legalRepresentativeIdentificationNumber" name="legalRepresentativeIdentificationNumber"><br><br>
+
+            <label for="legalRepresentativeIdentificationType">Tipo de Identificación del Representante Legal <span style="color: red;">*</span>:</label>
+            <select id="legalRepresentativeIdentificationType" name="legalRepresentativeIdentificationType" onchange="" required>
+                <option value="Natural" selected>Cédula de ciudadanía</option>
+                <option value="Empresarial">Cédula de extranjería</option>
+            </select><br><br>
+
+            <label for="legalRepresentativeCountry">País del Representante Legal <span style="color: red;">*</span>:</label>
+            <input type="text" id="legalRepresentativeCountry" name="legalRepresentativeCountry"><br><br>
+
+            <label for="legalRepresentativePhone">Teléfono del Representante Legal <span style="color: red;">*</span>:</label>
+            <input type="text" id="legalRepresentativePhone" name="legalRepresentativePhone"><br><br>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="../../../../controllers/BaseController.js"></script>
+<script type="module" src="../../../../controllers/ClientController.js"></script>
+<script type="module" src="./CreateClientForm.js"></script>
+</html>

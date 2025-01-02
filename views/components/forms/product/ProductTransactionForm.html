@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../../../content/css/ProductTransactionFormStyless.css">
+    <title>Transacciones</title>
+</head>
+<body>
+    <a id="back-btn" href="./../../../home/Products.html">Regresar</a>
+
+    <form>
+        <h2>Transacciones de cuenta</h2>
+        <label for="productId">ID del Producto<span style="color: red;">*</span>:</label>
+        <input type="text" id="productId" name="productId" value="0" required>
+        <br><br>
+        
+        <label for="amount">Cantidad<span style="color: red;">*</span>:</label>
+        <input type="text" id="amount" name="amount" value="0" required>
+        <br><br>
+
+        <label for="operation">Operación<span style="color: red;">*</span>:</label>
+        <select id="operation" name="operation" required>
+            <option value="Deposit">Depositar</option>
+            <option value="Withdraw">Retirar</option>
+        </select>
+        <br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="../../../../controllers/BaseController.js"></script>
+<script type="module" src="../../../../controllers/TransactionController.js"></script>
+<script type="module" src="./ProductTransactionForm.js"></script>
+</html>

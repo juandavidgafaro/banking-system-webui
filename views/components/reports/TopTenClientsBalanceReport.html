@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../../content/css/TopTenClientsBalanceReportStyless.css">
+    <title>Reporte top clientes</title>
+</head>
+<body>
+    <a id="back-btn" href="./../../home/Reports.html">Regresar</a>
+
+    <h2>Clientes con Cuentas de Ahorros</h2>
+    <table id="savingsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Número de Identificación</th>
+                <th>Tipo de Identificación</th>
+                <th>Tipo de Persona</th>
+                <th>País</th>
+                <th>Nombre del Representante Legal</th>
+                <th>Número de Identificación del Representante Legal</th>
+                <th>Teléfono del Representante Legal</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <h2>Clientes con Cuentas Corrientes</h2>
+    <table id="checkingTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Número de Identificación</th>
+                <th>Tipo de Identificación</th>
+                <th>Tipo de Persona</th>
+                <th>País</th>
+                <th>Nombre del Representante Legal</th>
+                <th>Número de Identificación del Representante Legal</th>
+                <th>Teléfono del Representante Legal</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <h2>Clientes con CDT</h2>
+    <table id="cdtTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Número de Identificación</th>
+                <th>Tipo de Identificación</th>
+                <th>Tipo de Persona</th>
+                <th>País</th>
+                <th>Nombre del Representante Legal</th>
+                <th>Número de Identificación del Representante Legal</th>
+                <th>Teléfono del Representante Legal</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="../../../controllers/BaseController.js"></script>
+<script type="module" src="../../../controllers/ReportController.js"></script>
+<script type="module" src="./TopTenClientsBalanceReport.js"></script>
+</html>

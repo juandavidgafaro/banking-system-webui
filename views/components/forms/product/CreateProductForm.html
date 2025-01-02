@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../../../../content/css/CretateProductView.css">
+    <title>Crear producto</title>
+</head>
+<body>
+    <a id="back-btn" href="./../../../home/Products.html">Regresar</a>
+
+    <div class="form-container">
+        <h2>Crear producto</h2>
+        <form>
+            <div class="form-group">
+                <label for="type">Tipo<span style="color: red;">*</span>:</label>
+                <select id="type" name="type" onchange="" required>
+                    <option value="Cuenta ahorros" selected>Cuenta ahorros</option>
+                    <option value="Cuenta corriente">Cuenta corriente</option>
+                    <option value="CDT">CDT</option>
+                </select><br><br>
+            </div>
+            <div class="form-group">
+                <label for="termMonths">Meses de plazo</label>
+                <input type="text" id="termMonths" name="termMonths" required>
+            </div>
+            <div class="form-group">
+                <label for="initialBalance">Saldo inicial</label>
+                <input type="text" id="initialBalance" name="initialBalance" required>
+            </div>
+            <div class="form-group">
+                <label for="monthlyInterestPercentage">Porcentaje de interés mensual</label>
+                <input type="text" id="monthlyInterestPercentage" placeholder="ejemplo: 0.4" name="monthlyInterestPercentage" required>
+            </div>
+            <div class="form-group">
+                <label for="clientId">ID del cliente<span style="color: red;">*</span>:</label>
+                <input type="text" id="clientId" name="clientId" required>
+            </div>
+            <div class="form-submit">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script type="module" src="../../../../controllers/BaseController.js"></script>
+<script type="module" src="../../../../controllers/ProductController.js"></script>
+<script type="module" src="./CreateProductForm.js"></script>
+</html>
