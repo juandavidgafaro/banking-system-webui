@@ -1,7 +1,11 @@
 class LegalRepresentative {
-    constructor(name, id, phone) {
+    constructor(name, identificationNumber, identificationType, country, phone) {
         this.name = name;
-        this.id = id;
+        this.identificationNumber = identificationNumber;
+        this.identificationType = identificationType;
+        this.country = country;
         this.phone = phone;
     }
 }
+
+export default LegalRepresentative;
